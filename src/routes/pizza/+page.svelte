@@ -1,35 +1,27 @@
 <script>
-	let toppings = [];
-	let toppingNiceNames = {
+	import Topping from "./Topping.svelte";
+	let selected = [];
+	let toppings = {
 		cheese: "Ost",
 		tomato: "Tomat",
 		ham: "Skinka",
 		mushroom: "Champinjoner"
 	};
-	let final = "";
-
-	function niceNames() {
-		toppings.forEach((topping) => {
-			final += toppingNiceNames[topping] + "\n";
-		});
-	}
 
 	function submit() {
-		niceNames();
-		alert(final);
-		final = "";
+		let final = selected.map((topping, i) => {
+			if (topping) {
+				return `${Object.entries(toppings)[i][1]}\n`;
+			}
+		});
+		alert(final.join(""));
 	}
 </script>
 
 <form id="form" on:submit|preventDefault={() => submit()}>
-	<input type="checkbox" value="cheese" id="cheese" bind:group={toppings} />
-	<label for="cheese">Ost</label>
-	<input type="checkbox" value="tomato" id="tomato" bind:group={toppings} />
-	<label for="tomato">Tomat</label>
-	<input type="checkbox" value="ham" id="ham" bind:group={toppings} />
-	<label for="ham">Skinka</label>
-	<input type="checkbox" value="mushroom" id="mushroom" bind:group={toppings} />
-	<label for="mushroom">Champinjoner</label>
+	{#each Object.entries(toppings) as [key, value], i}
+		<Topping value={key} name={value} bind:checked={selected[i]} />
+	{/each}
 	<button type="submit" id="submit" class="rounded-lg bg-blue-400">Submit</button>
 </form>
 
