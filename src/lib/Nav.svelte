@@ -1,10 +1,11 @@
 <script>
-  export let routes;
-  export let prefix;
+	export let routes;
+	export let prefix;
 	import { page } from "$app/stores";
 </script>
 
 <nav class="p-8">
+	<a class="m-4 rounded-lg bg-blue-400 p-4 text-black" href="/">Home</a>
 	{#each routes as route}
 		{#if $page.route.id === prefix}
 			<a class="m-4 rounded-lg bg-blue-400 p-4 text-black" href="01/{route}">{route}</a>
@@ -15,5 +16,4 @@
 </nav>
 
 <style>
-  
 </style>
