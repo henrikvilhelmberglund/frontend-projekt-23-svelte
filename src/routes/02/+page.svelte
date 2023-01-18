@@ -21,7 +21,7 @@
 {#if !done}
 	<form on:submit={(e) => validate(e)} bind:this={root} novalidate>
 		<ul>
-			{#each Object.entries(data) as [id, { name, type, min, max, error }], i}
+			{#each Object.entries(data) as [id, { name, type, min, max, error, required }], i}
 				<li class="flex p-2 [&>*]:mx-4">
 					<label class="w-32" for={id}>{name}</label>
 					<input
@@ -31,7 +31,7 @@
 						bind:this={elements[i]}
 						on:change={() => (errors[i] = !elements[i].checkValidity())}
 						on:input={() => (errors[i] ? (errors[i] = !elements[i].checkValidity()) : true)}
-						required
+						required={required ?? null}
 						minlength={min ?? null}
 						maxlength={max ?? null} />
 					{#if errors[i]}
