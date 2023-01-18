@@ -3,15 +3,14 @@
 	let errors = [];
 	let root;
 	let done;
+	let elements = [];
 
 	function validate(e) {
 		e.preventDefault();
-		root.querySelectorAll("input").forEach((input, i) => {
-			if (!input.checkValidity()) {
-				errors[i] = true;
-			} else {
-				errors[i] = false;
-			}
+		// root.querySelectorAll("input").forEach((input, i) => {
+		// same thing as below
+		elements.forEach((input, i) => {
+			errors[i] = !input.checkValidity();
 		});
 		if (errors.every((error) => error === false)) {
 			done = true;
@@ -22,18 +21,21 @@
 {#if !done}
 	<form on:submit={(e) => validate(e)} bind:this={root} novalidate>
 		<ul>
-			{#each Object.entries(data) as [id, contents], i}
+			{#each Object.entries(data) as [id, { name, type, min, max, error }], i}
 				<li class="flex p-2 [&>*]:mx-4">
-					<label class="w-32" for={id}>{contents.name}</label>
+					<label class="w-32" for={id}>{name}</label>
 					<input
-						type={contents.type ?? "text"}
+						type={type ?? "text"}
 						{id}
-						name={contents.name}
+						{name}
+						bind:this={elements[i]}
+						on:change={() => (errors[i] = !elements[i].checkValidity())}
+						on:input={() => (errors[i] ? (errors[i] = !elements[i].checkValidity()) : true)}
 						required
-						minlength={contents.min ?? null}
-						maxlength={contents.max ?? null} />
+						minlength={min ?? null}
+						maxlength={max ?? null} />
 					{#if errors[i]}
-						<span class="text-red-600" id="{id}-error">{contents.error}</span>
+						<span class="text-red-600" id="{id}-error">{error}</span>
 					{/if}
 				</li>
 			{/each}
