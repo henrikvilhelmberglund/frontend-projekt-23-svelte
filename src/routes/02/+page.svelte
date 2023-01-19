@@ -1,5 +1,7 @@
 <script>
-	import { data } from "./data.js";
+	// import { data } from "./data.js";
+	import data from "./data.json";
+  let orderedData = Object.entries(data);
 	let errors = [];
 	let root;
 	let done;
@@ -21,7 +23,7 @@
 {#if !done}
 	<form on:submit={(e) => validate(e)} bind:this={root} novalidate>
 		<ul>
-			{#each Object.entries(data) as [id, { name, type, min, max, error, required }], i}
+			{#each orderedData as [id, { name, type, min, max, error, required }], i}
 				<li class="flex p-2 [&>*]:mx-4">
 					<label class="w-32" for={id}>{name}</label>
 					<input
