@@ -6,7 +6,10 @@ const config = {
 	},
 
 	plugins: [require("@tailwindcss/forms")],
-	mode: "jit"
+	mode: "jit",
+	corePlugins: {
+		preflight: false
+	}
 };
 
 module.exports = config;
