@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width" />
 		<meta http-equiv="content-security-policy" content="">
 		<link href="/frontend-projekt-23-svelte/_app/immutable/assets/_layout-32d8f2b5.css" rel="stylesheet">
+		<link href="/frontend-projekt-23-svelte/_app/immutable/assets/_page-10e589c7.css" rel="stylesheet">
 		<link rel="modulepreload" href="/frontend-projekt-23-svelte/_app/immutable/start-f2357be7.js">
 		<link rel="modulepreload" href="/frontend-projekt-23-svelte/_app/immutable/chunks/index-3d15730c.js">
 		<link rel="modulepreload" href="/frontend-projekt-23-svelte/_app/immutable/chunks/singletons-f60755fb.js">
@@ -16,7 +17,7 @@
 		<link rel="modulepreload" href="/frontend-projekt-23-svelte/_app/immutable/components/pages/js/01/_layout.svelte-fb025fe7.js">
 		<link rel="modulepreload" href="/frontend-projekt-23-svelte/_app/immutable/chunks/Nav-eacaa224.js">
 		<link rel="modulepreload" href="/frontend-projekt-23-svelte/_app/immutable/chunks/stores-d0f48947.js">
-		<link rel="modulepreload" href="/frontend-projekt-23-svelte/_app/immutable/components/pages/js/01/_page.svelte-b727c93e.js">
+		<link rel="modulepreload" href="/frontend-projekt-23-svelte/_app/immutable/components/pages/js/01/tabsystem/_page.svelte-21c86f01.js">
 	</head>
 	<body>
 		<div style="display: contents" class="h-full overflow-hidden">
@@ -26,21 +27,39 @@
 
 <nav class="p-8"><a class="m-4 rounded-lg bg-blue-400 p-4 text-black" href="/frontend-projekt-23-svelte/">Home</a>
 	<a class="m-4 rounded-lg bg-indigo-400 p-4 text-black" href="/frontend-projekt-23-svelte/js/01">/01</a>
-	<a class="m-4 rounded-lg bg-indigo-400 p-4 text-black" href="/frontend-projekt-23-svelte/js/01/login">login</a><a class="m-4 rounded-lg bg-indigo-400 p-4 text-black" href="/frontend-projekt-23-svelte/js/01/pizza">pizza</a><a class="m-4 rounded-lg bg-indigo-400 p-4 text-black" href="/frontend-projekt-23-svelte/js/01/multiplesteps">multiplesteps</a><a class="m-4 rounded-lg bg-indigo-400 p-4 text-black" href="/frontend-projekt-23-svelte/js/01/tabsystem">tabsystem</a>
+	<a class="m-4 rounded-lg bg-indigo-400 p-4 text-black" href="login">login</a><a class="m-4 rounded-lg bg-indigo-400 p-4 text-black" href="pizza">pizza</a><a class="m-4 rounded-lg bg-indigo-400 p-4 text-black" href="multiplesteps">multiplesteps</a><a class="m-4 rounded-lg bg-indigo-400 p-4 text-black" href="tabsystem">tabsystem</a>
 </nav>
 
 
+<h1 class="svelte-or1h7g">Tab menu</h1>
+<menu id="tabmenu" class="svelte-or1h7g"><input class="invisible svelte-or1h7g" type="radio" name="tab" id="aboutTab" checked>
+	<label for="aboutTab" class="svelte-or1h7g">About</label>
+	<input class="invisible svelte-or1h7g" type="radio" name="tab" id="productsTab">
+	<label for="productsTab" class="svelte-or1h7g">Products</label>
+	<input class="invisible svelte-or1h7g" type="radio" name="tab" id="shippingTab">
+	<label for="shippingTab" class="svelte-or1h7g">Shipping</label></menu>
 
-		<script type="module" data-sveltekit-hydrate="sx03ek">
+<article id="about" class="svelte-or1h7g"><h2 class="svelte-or1h7g">About</h2>
+	<p class="svelte-or1h7g">Lorem ipsum dolor sit amet.</p></article>
+<article id="products" class="svelte-or1h7g"><h2 class="svelte-or1h7g">Products</h2>
+	<ul class="svelte-or1h7g"><li class="svelte-or1h7g">Product 1</li>
+		<li class="svelte-or1h7g">Product 2</li>
+		<li class="svelte-or1h7g">Product 3</li></ul></article>
+<article id="shipping" class="svelte-or1h7g"><h2 class="svelte-or1h7g">Shipping</h2>
+	<p class="svelte-or1h7g">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, modi.</p>
+</article>
+
+
+		<script type="module" data-sveltekit-hydrate="avyapd">
 			import { start } from "/frontend-projekt-23-svelte/_app/immutable/start-f2357be7.js";
 
 			start({
 				env: {},
 				paths: {"base":"/frontend-projekt-23-svelte","assets":"/frontend-projekt-23-svelte"},
-				target: document.querySelector('[data-sveltekit-hydrate="sx03ek"]').parentNode,
+				target: document.querySelector('[data-sveltekit-hydrate="avyapd"]').parentNode,
 				version: "1674243515908",
 				hydrate: {
-					node_ids: [0, 4, 13],
+					node_ids: [0, 4, 17],
 					data: [null,null,null],
 					form: null
 				}
