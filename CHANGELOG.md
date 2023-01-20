@@ -2,6 +2,37 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.0.3](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/compare/v0.0.2...v0.0.3) (2023-01-20)
+
+
+### Features
+
+* :sparkles: add vanilla JS version of 02 (validering) ([0f2f9cc](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/0f2f9cce5fbdc7d1e666bc5ace8b05cf455b6a22))
+* :sparkles: add vanilla JS version of tabsystem ([af24925](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/af24925e2667fef9490ec88d2dfc376bf2e7c254))
+* :sparkles: add vanilla JS version of multiplesteps ([70fa7fa](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/70fa7fac7714019ea130a1e19ea694478108a55b))
+* :sparkles: add vanilla JS version of pizza ([fcbd550](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/fcbd550318b36251ae8f3d9ae5bb7cac1007a13e))
+* :sparkles: add deleted code to this subpage ([f43e3c5](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/f43e3c5fe18fd07665d1401e902f7cd35656cd56))
+* :sparkles: add nav for JS pages ([8432c3c](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/8432c3c562d3751eeaa4dd32cd51b88d9f535794))
+* :sparkles: add links in JS base page ([4e46936](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/4e46936b4981575f4c4205c2dd86ff41658a3bdb))
+* :sparkles: add link to JS ([d9c6b0d](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/d9c6b0de8f1af77e7721ea9c2260cdb648a15290))
+* :sparkles: add almost(?) vanilla JS in .svelte ([7c73cbc](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/7c73cbc68dcb6cf40eaae3594d1558748ec88063))
+* :sparkles: use JSON format instead ([2b99c3e](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/2b99c3e5c2613780feb7206b9e7eaa4f1601a174))
+* :sparkles: add required variable to data.js and markup for the attribute ([312246a](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/312246a7783401ecc5534735423f7e3ea9639bad))
+
+
+### Bug Fixes
+
+* :fire: remove debugging stuff ([2ee1e1d](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/2ee1e1dfc7011729a25c27a386454947854db743))
+* :fire: move this code to sub page ([bc678e3](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/bc678e3eef3160095bc0eb256debad187aa29be5))
+* :bug: support JS routes (jank) ([d402b45](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/d402b45c6e0355b9db084921cad2942c52ed3541))
+* :bug: disable preload on link hover (loads CSS I don't want to load immediately) ([6963c88](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/6963c8820b0de9fd8a92c4b777b86c4e52cf5b56))
+* :bug: disable preflights (you will be missed) ([df2bcad](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/df2bcada783780190b5b36f6adcb66c1e199ef45))
+* :bug: add prerender flag required by static adapter ([9038593](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/9038593d9637ee09fdcfa74225821958a5b658c5))
+* :bug: switch to static adapter for github pages support ([d41d174](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/d41d174cca3ca690c184c3f0e09e2ef163f90de1))
+* :bug: add base links ([f2738bc](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/f2738bcc84f8143c758a40c36a0a235d3a4f6d78))
+* :bug: add base paths for certail links ([74a2266](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/74a226661210d67f6ca703ed3f8718c6dbc76cc9))
+* :memo: update README ([e77ca78](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/e77ca78795878b9c5bfae4f28328a9570ef4dfcc))
+
 ### [0.0.2](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/compare/v0.0.1...v0.0.2) (2023-01-18)
 
 
