@@ -26,8 +26,6 @@
 	});
 </script>
 
-<svelte:body bind:this={document} />
-
 <form id="form">
 	<input type="checkbox" value="cheese" id="cheese" />
 	<label for="cheese">Ost</label>

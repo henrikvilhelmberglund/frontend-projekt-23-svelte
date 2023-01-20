@@ -34,7 +34,6 @@
 	<title>Login</title>
 	<!-- <script src="main.js" defer></script> -->
 </svelte:head>
-<svelte:body bind:this={document} />
 
 <div id="welcome">
 	<h1>Välkommen till 01 - Forms!</h1>

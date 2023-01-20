@@ -36,8 +36,6 @@
 	});
 </script>
 
-<svelte:body bind:this={document} />
-
 <form id="registerform" class="registerform" novalidate>
 	<ul>
 		<li>

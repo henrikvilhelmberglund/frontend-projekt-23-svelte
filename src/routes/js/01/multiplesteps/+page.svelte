@@ -42,8 +42,6 @@
 	});
 </script>
 
-<svelte:body bind:this={document} />
-
 <form id="form">
 	<select name="" id="room">
 		<option value="" disabled selected hidden>Select your option</option>

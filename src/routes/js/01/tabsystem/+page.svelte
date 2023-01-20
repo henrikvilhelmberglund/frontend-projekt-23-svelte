@@ -34,8 +34,6 @@
 	});
 </script>
 
-<svelte:body bind:this={document} />
-
 <h1>Tab menu</h1>
 <menu id="tabmenu">
 	<input class="invisible" type="radio" name="tab" id="aboutTab" checked />
