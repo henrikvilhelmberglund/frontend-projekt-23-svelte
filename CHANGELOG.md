@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+### [0.0.4](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/compare/v0.0.3...v0.0.4) (2023-01-20)
+
+
+### Features
+
+* :sparkles: add Nav for 02 JS ([52b7d85](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/52b7d8561500cd72e2a579be59a9311dd490dc0b))
+
+
+### Bug Fixes
+
+* :fire: remove svelte body binding (wasn't required, TIL) ([43ff578](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/commit/43ff5782555791ffd0d59a4a8d35e6325cd42d8b))
+
 ### [0.0.3](https://github.com/henrikvilhelmberglund/frontend-projekt-23-svelte/compare/v0.0.2...v0.0.3) (2023-01-20)
 
 
