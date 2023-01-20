@@ -5,6 +5,7 @@
 	import { page } from "$app/stores";
 	import { base } from "$app/paths";
 </script>
+
 <!-- {$page.route.id} -->
 
 <nav class="p-8">
@@ -23,10 +24,7 @@
 			<a class="m-4 rounded-lg bg-indigo-400 p-4 text-black" href="{base}/js{prefix}/{route}"
 				>{route}</a>
 		{:else if $page.route.id.includes("/js" + prefix + "/") && js}
-			<a class="m-4 rounded-lg bg-indigo-400 p-4 text-black" href="{route}">{route}</a>
-      hi
-		{:else}
-			shit'sfuckedd
+			<a class="m-4 rounded-lg bg-indigo-400 p-4 text-black" href={route}>{route}</a>
 		{/if}
 	{/each}
 </nav>
