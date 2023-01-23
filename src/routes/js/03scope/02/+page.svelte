@@ -23,8 +23,9 @@
 		];
 
 		function getLastMessage(arr) {
-			arr.reverse();
-			return arr[0].text;
+			const newArr = [...arr];
+			newArr.reverse();
+			return newArr[0].text;
 		}
 
 		const latestMessageHolder = document.getElementById("latestMessage");
