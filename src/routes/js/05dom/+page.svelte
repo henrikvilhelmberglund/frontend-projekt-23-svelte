@@ -31,13 +31,11 @@
 				text: 'Det verkar som du inte klickat i "godkänn"-rutan'
 			}
 		];
-
+		let liHTML = "";
 		messages.forEach(({ from, text }) => {
-			let li = document.createElement("li");
-			li.innerText = text;
-			li.classList.add(from);
-			messagelist.append(li);
+			liHTML += `<li class="${from}">${text}</li>`;
 		});
+		messagelist.innerHTML += liHTML;
 		chatbox.append(messagelist);
 		body.append(chatbox);
 	});
