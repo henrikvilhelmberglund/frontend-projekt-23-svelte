@@ -17,9 +17,7 @@
 
 			for (var i = 0; i < helpText.length; i++) {
 				let item = helpText[i];
-				document.getElementById(item.id).onfocus = function () {
-					showHelp(item.help);
-				};
+				document.getElementById(item.id).onfocus = ()=>	showHelp(item.help);
 			}
 		}
 
