@@ -7,6 +7,7 @@
 	<a class="m-4 rounded-lg bg-purple-500 p-4" href="{base}/js/02">Lektion 1: Validering</a>
 	<a class="m-4 rounded-lg bg-purple-500 p-4" href="{base}/js/03scope">Lektion 2: Scopes</a>
 	<a class="m-4 rounded-lg bg-purple-500 p-4" href="{base}/js/04arrayfunc">Lektion 2: Arrayfunc</a>
+	<a class="m-4 rounded-lg bg-purple-500 p-4" href="{base}/js/05dom">Lektion 2: DOM manipulation</a>
 </div>
 
 <style>
