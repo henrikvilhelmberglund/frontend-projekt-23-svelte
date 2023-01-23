@@ -18,13 +18,24 @@
 		chatbox.classList.add("hidden");
 		let messagelist = document.createElement("ul");
 		const messages = [
-			"Välkommen till vår chat! Kan jag hjälpa till med något?",
-			"Något går fel när jag försöker bekräfta beställningen",
-			'Det verkar som du inte klickat i "godkänn"-rutan'
+			{
+				from: "bot",
+				text: "Välkommen till vår chat! Kan jag hjälpa till med något?"
+			},
+			{
+				from: "user",
+				text: "Något går fel när jag försöker bekräfta beställningen"
+			},
+			{
+				from: "bot",
+				text: 'Det verkar som du inte klickat i "godkänn"-rutan'
+			}
 		];
-		messages.forEach((message) => {
+
+		messages.forEach(({ from, text }) => {
 			let li = document.createElement("li");
-			li.innerText = message;
+			li.innerText = text;
+			li.classList.add(from);
 			messagelist.append(li);
 		});
 		chatbox.append(messagelist);
@@ -37,8 +48,13 @@
 	:global(body) {
 		display: none;
 	}
-
 	.hidden {
 		display: none;
+	}
+	:global(.bot) {
+		color: red;
+	}
+	:global(.user) {
+		color: blueviolet;
 	}
 </style>
