@@ -48,7 +48,7 @@
 <svelte:body bind:this={document} />
 
 <div>
-	<button id="showQuotesBtn">Show qoutes</button>
+	<button id="showQuotesBtn">Show quotes</button>
 	<ul id="quoteList" />
 </div>
 
