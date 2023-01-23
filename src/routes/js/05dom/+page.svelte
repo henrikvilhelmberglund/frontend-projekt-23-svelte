@@ -16,15 +16,17 @@
 		h2.innerText = "Chatbox";
 		chatbox.prepend(h2);
 		chatbox.classList.add("hidden");
-		let messagelist = document.createElement("div");
+		let messagelist = document.createElement("ul");
 		const messages = [
 			"Välkommen till vår chat! Kan jag hjälpa till med något?",
 			"Något går fel när jag försöker bekräfta beställningen",
 			'Det verkar som du inte klickat i "godkänn"-rutan'
 		];
-		let messagesHTML = "";
-		messages.forEach((message) => (messagesHTML += `${message}<br>`));
-		messagelist.innerHTML = messagesHTML;
+		messages.forEach((message) => {
+			let li = document.createElement("li");
+			li.innerText = message;
+			messagelist.append(li);
+		});
 		chatbox.append(messagelist);
 		body.append(chatbox);
 	});
