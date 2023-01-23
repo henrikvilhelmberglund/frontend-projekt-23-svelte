@@ -20,7 +20,9 @@
 </script>
 
 <svelte:body bind:this={document} />
-{filterMe(values, 1, 4)}
+<p class="text-4xl">
+  {filterMe(values, 1, 4)}
+</p>
 
 <style>
 	:global(body) {
