@@ -8,14 +8,14 @@
 		var authors = ["Charles Dickens", "Jane Austen", "Mark Twain"];
 
 		var btn = document.getElementById("showAuthorsBtn");
-		var list = document.getElementById("authorList");
+		var authorList = document.getElementById("authorList");
 
 		btn.addEventListener("click", function () {
-			list.innerHTML = "";
+			authorList.innerHTML = "";
 			for (var i = 0; i < authors.length; i++) {
 				var li = document.createElement("li");
 				li.innerText = authors[i];
-				list.appendChild(li);
+				authorList.appendChild(li);
 			}
 		});
 
@@ -26,14 +26,14 @@
 		];
 
 		var btn = document.getElementById("showQuotesBtn");
-		var list = document.getElementById("quoteList");
+		var quotesList = document.getElementById("quoteList");
 
 		btn.addEventListener("click", function () {
-			list.innerHTML = "";
+			quotesList.innerHTML = "";
 			for (var i = 0; i < quotes.length; i++) {
 				var li = document.createElement("li");
 				li.innerText = quotes[i];
-				list.appendChild(li);
+				quotesList.appendChild(li);
 			}
 		});
 	});
