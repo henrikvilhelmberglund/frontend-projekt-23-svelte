@@ -1,0 +1,1 @@
+var n=["The best is yet to be.","Try to be a rainbow in someones cloud.","When things go wrong, dont go with them."],r=document.getElementById("showQuotesBtn"),o=document.getElementById("quoteList");r.addEventListener("click",function(){o.innerHTML="";for(var e=0;e<n.length;e++){var t=document.createElement("li");t.innerText=n[e],o.appendChild(t)}});
