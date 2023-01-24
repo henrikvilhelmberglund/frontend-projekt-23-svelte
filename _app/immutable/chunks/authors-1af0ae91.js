@@ -1,0 +1,1 @@
+(function(){var n=["Charles Dickens","Jane Austen","Mark Twain"],a=document.getElementById("showAuthorsBtn"),t=document.getElementById("authorList");a.addEventListener("click",function(){t.innerHTML="";for(var e=0;e<n.length;e++){var r=document.createElement("li");r.innerText=n[e],t.appendChild(r)}})})();
