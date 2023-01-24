@@ -1,3 +1,4 @@
+(function () {
 var authors = ["Charles Dickens", "Jane Austen", "Mark Twain"];
 
 var btn = document.getElementById("showAuthorsBtn");
@@ -10,3 +11,4 @@ btn.addEventListener("click", function () {
 		list.appendChild(li);
 	}
 });
+})();
