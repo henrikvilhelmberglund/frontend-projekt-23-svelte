@@ -1,1 +1,0 @@
-import{S as i,i as o,s as r,q as c,r as l,b as p,B as s,h as u}from"../../../../../chunks/index-acd62099.js";function f(a){let t;return{c(){t=c("skip")},l(e){t=l(e,"skip")},m(e,n){p(e,t,n)},p:s,i:s,o:s,d(e){e&&u(t)}}}class d extends i{constructor(t){super(),o(this,t,null,f,r,{})}}export{d as default};
