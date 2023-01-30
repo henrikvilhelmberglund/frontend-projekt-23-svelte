@@ -1,57 +1,25 @@
 <script>
-	// TODO make javascripty (move this to other folder)
-	let sort;
+	import { goto } from "$app/navigation";
+	export let data;
+	import { base } from "$app/paths";
+	let sort = "?sort=asc";
 	let limit;
-	function outputProducts(products) {
-		let body = document.querySelector("body");
-		let ul = document.querySelector("#myUl");
-		let productHTML = products.map((product) => {
-			return `
-      <li>
-        <p class="title">${product.title}</p>
-        <span class="price">${product.price}:-</span>
-        <p class="desc">${product.description}</p>
-        <img class="image" src="${product.image}" alt="">
-        </li>
-      `;
-		});
-		ul.innerHTML = "";
-		ul.innerHTML += productHTML.join("");
-	}
-
-	async function fetchData(address) {
-		let res = await fetch(address);
-		let data = await res.json();
-		return data;
-	}
-
-	import { onMount } from "svelte";
-	onMount(async () => {
-		let body = document.querySelector("body");
-		body.style.display = "block";
-		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}${limit ?? ""}`);
-		outputProducts(myData);
-		// await import("./main.js");
-	});
 </script>
 
 <button
 	on:click={async () => {
-		sort = "?sort=desc";
-		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}${limit ?? ""}`);
-		outputProducts(myData);
-	}}>Sort descending</button>
+		sort = "?sort=asc";
+		goto(`${base}./03/${sort ?? ""}${limit ?? ""}`);
+	}}>Sort ascending</button>
 <button
 	on:click={async () => {
-		sort = "?sort=asc";
-		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}${limit ?? ""}`);
-		outputProducts(myData);
-	}}>Sort ascending</button>
+		sort = "?sort=desc";
+		goto(`${base}./03/${sort ?? ""}${limit ?? ""}`);
+	}}>Sort descending</button>
 <select
 	bind:value={limit}
 	on:change={async () => {
-		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}${limit ?? ""}`);
-		outputProducts(myData);
+		goto(`${base}./03/${sort ?? ""}${limit ?? ""}`);
 	}}>
 	<option value=""> No limit </option>
 	<option value="&limit=10"> Limit to 10 </option>
@@ -59,7 +27,16 @@
 	<option value="&limit=2"> Limit to 2 </option>
 </select>
 
-<ul id="myUl" />
+<ul id="myUl">
+	{#each data.data as product}
+		<li>
+			<p class="title">{product.title}</p>
+			<span class="price">{product.price}:-</span>
+			<p class="desc">{product.description}</p>
+			<img class="image" src={product.image} alt="" />
+		</li>
+	{/each}
+</ul>
 
 <svelte:head>
 	<style>
@@ -85,7 +62,4 @@
 </svelte:head>
 
 <style>
-	:global(body) {
-		display: none;
-	}
 </style>
