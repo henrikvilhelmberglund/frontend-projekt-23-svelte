@@ -1,4 +1,7 @@
 <script>
+	// TODO make javascripty (move this to other folder)
+	let sort;
+	let limit;
 	function outputProducts(products) {
 		let body = document.querySelector("body");
 		let ul = document.querySelector("#myUl");
@@ -26,21 +29,41 @@
 	onMount(async () => {
 		let body = document.querySelector("body");
 		body.style.display = "block";
-		let myData = await fetchData("https://fakestoreapi.com/products");
+		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}`);
 		outputProducts(myData);
 		// await import("./main.js");
 	});
 </script>
 
+<button
+	on:click={async () => {
+		sort = "?sort=desc";
+		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}`);
+		outputProducts(myData);
+	}}>Sort descending</button>
+<button
+	on:click={async () => {
+		sort = "?sort=asc";
+		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}`);
+		outputProducts(myData);
+	}}>Sort ascending</button>
+<!-- TODO make this a dropdown -->
+<button
+	on:click={async () => {
+		limit = "?limit=5";
+		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}${limit ?? ""}`);
+		outputProducts(myData);
+	}}>Limit to 5</button>
+
 <ul id="myUl" />
 
 <svelte:head>
 	<style>
-    * {
-      @apply font-sans
-    }
+		* {
+			@apply font-sans;
+		}
 		li {
-			@apply m-4 list-none rounded-xl bg-green-200 p-4 border-solid border-2 border-black;
+			@apply m-4 list-none rounded-xl border-2 border-solid border-black bg-green-200 p-4;
 		}
 		.title {
 			@apply text-3xl;
