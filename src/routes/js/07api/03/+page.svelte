@@ -29,7 +29,7 @@
 	onMount(async () => {
 		let body = document.querySelector("body");
 		body.style.display = "block";
-		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}`);
+		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}${limit ?? ""}`);
 		outputProducts(myData);
 		// await import("./main.js");
 	});
@@ -38,22 +38,26 @@
 <button
 	on:click={async () => {
 		sort = "?sort=desc";
-		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}`);
+		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}${limit ?? ""}`);
 		outputProducts(myData);
 	}}>Sort descending</button>
 <button
 	on:click={async () => {
 		sort = "?sort=asc";
-		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}`);
-		outputProducts(myData);
-	}}>Sort ascending</button>
-<!-- TODO make this a dropdown -->
-<button
-	on:click={async () => {
-		limit = "?limit=5";
 		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}${limit ?? ""}`);
 		outputProducts(myData);
-	}}>Limit to 5</button>
+	}}>Sort ascending</button>
+<select
+	bind:value={limit}
+	on:change={async () => {
+		let myData = await fetchData(`https://fakestoreapi.com/products${sort ?? ""}${limit ?? ""}`);
+		outputProducts(myData);
+	}}>
+	<option value=""> No limit </option>
+	<option value="&limit=10"> Limit to 10 </option>
+	<option value="&limit=5"> Limit to 5 </option>
+	<option value="&limit=2"> Limit to 2 </option>
+</select>
 
 <ul id="myUl" />
 
