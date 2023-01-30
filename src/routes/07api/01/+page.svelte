@@ -1,25 +1,10 @@
 <script>
-	import { onMount } from "svelte";
-	let myP;
-
-	async function readTxt(address) {
-		const res = await fetch(address);
-		const data = await res.text();
-		myP.innerHTML = data;
-	}
-
-	onMount(() => {
-		let body = document.querySelector("body");
-		body.style.display = "block";
-		readTxt(`/src/lib/mytext.txt`);
-		// import("./main.js");
-	});
+	export let data;
 </script>
 
-<p bind:this={myP} />
+<p>
+	{data.text}
+</p>
 
 <style>
-	:global(body) {
-		display: none;
-	}
 </style>
